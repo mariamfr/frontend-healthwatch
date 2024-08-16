@@ -1,0 +1,180 @@
+header {
+    background-color: #B1C6EA;
+    margin: 15px 8px 0px 8px;
+    display: grid;
+    grid-template-rows: 50%, 50%;
+    height: 100px;
+    position: relative;
+    width: 100%;
+}
+
+.header__container a {
+    text-decoration: none;
+    margin-left: 10px;
+    padding: 6px 12px;
+    color: #F3F4F6;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: bold;
+}
+
+/* Efectos de hover */
+.header__container li a:hover {
+    border: 3px solid #1E3A8A;
+    border-radius: 12px;
+}
+
+/* Efecto cuando se remueve el link */
+.header__container li a.disabled {
+    background-color: #1E3A8A;
+    border-radius: 12px;
+    border: none;
+    cursor: none;
+}
+
+.navbar {
+    /* position: sticky; */
+    display: grid;
+    grid-template-columns: 1fr 6fr 1fr 2fr;
+    /* alinea en el eje horizontal */
+    justify-self: center;
+    /* alinea en el eje vertical */
+    align-self: center;
+    /* height: 40px;  //revisando */
+}
+
+.navbar img {
+    height: 40px;
+}
+
+.navbar ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    list-style: none;
+    /* alinea en el eje horizontal */
+    justify-self: center;
+    /* alinea en el eje vertical */
+    align-self: center;
+}
+
+/* Efectos del fonts de Home */
+.navbar i {
+    color: #10B981;
+    font-size: 35px;
+    padding: 4px;
+}
+
+/* Efectos de hover */
+.navbar i:hover {
+    color: #A7F3D0;
+    cursor: pointer;
+}
+
+.navbar button {
+    background-color: #10B981;
+    color: #F3F4F6;
+    border-radius: 12px;
+    border: none;
+
+    z-index: 2;
+    width: 100%;
+    height: 30px;
+    font-size: .8em;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.navbar button a {
+    font-size: 25px;
+}
+
+.navbar button:hover {
+    border: 2px solid #A7F3D0;
+    cursor: pointer;
+}
+
+/* Organizando el boton de busqueda */
+.headerSearch__container {
+    display: flex;
+    /* Alinea los elementos a la derecha */
+    justify-content: flex-end;
+    align-items: end;
+    margin-top: 20px;
+}
+
+.headerSearch {
+    padding-left: 25%;
+    width: 30%;
+    background-color: #A7F3D0;
+    /* border: 1px solid #ddd; */
+    color: #10B981;
+    border-radius: 12px;
+    border: none;
+    font-size: 35px;
+}
+
+/* manejo de los queries */
+@media screen and (max-width: 900px) {
+    header {
+        grid-template-rows: 50%, 50%;
+        /* border: 5px double black; */
+        height: auto;
+    }
+
+    .navbar {
+        grid-template-columns: 1fr 2fr;
+    }
+
+    .navbar ul {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .header__container li {
+        margin-top: 8%;
+    }
+
+    .header__container a {
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    header {
+        grid-template-rows: 100%;
+    }
+
+    .navbar {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .header__container a {
+        font-size: 25px;
+    }
+
+    .headerSearch {
+        padding-left: 48%;
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    header {
+        grid-template-rows: 100%;
+        height: auto;
+    }
+
+    .navbar {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .navbar ul {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .headerSearch {
+        padding-left: 48%;
+        width: 70%;
+    }
+}

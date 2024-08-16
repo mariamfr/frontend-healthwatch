@@ -1,0 +1,15 @@
+<div class="cards-container">
+    <div *ngFor="let alert of alerts" class="card playing">
+        <div class="image"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="infotop">
+            <h3 (click)="viewAlert(alert._id)"><a>{{alert.description}}</a></h3>
+            <div class="datos">Fecha: {{alert.dateAlert}}</div>
+            <p class="datos">notificacion SMS: {{alert.notificationSms}}</p>
+        </div>
+    </div>
+</div>
+
+
