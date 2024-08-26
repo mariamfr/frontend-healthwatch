@@ -3,7 +3,7 @@ header {
     margin: 15px 8px 0px 8px;
     display: grid;
     grid-template-rows: 50%, 50%;
-    height: 100px;
+    height: 50px;
     position: relative;
     width: 100%;
 }
@@ -44,7 +44,7 @@ header {
 }
 
 .navbar img {
-    height: 40px;
+    height: 20px;
 }
 
 .navbar ul {
@@ -60,7 +60,7 @@ header {
 /* Efectos del fonts de Home */
 .navbar i {
     color: #10B981;
-    font-size: 35px;
+    font-size: 24px;
     padding: 4px;
 }
 
@@ -101,7 +101,7 @@ header {
     /* Alinea los elementos a la derecha */
     justify-content: flex-end;
     align-items: end;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .headerSearch {
@@ -112,7 +112,7 @@ header {
     color: #10B981;
     border-radius: 12px;
     border: none;
-    font-size: 35px;
+    font-size: 24px;
 }
 
 /* manejo de los queries */
