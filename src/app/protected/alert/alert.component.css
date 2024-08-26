@@ -2,7 +2,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 12px;
 }
 
 /* From Uiverse.io by MikeAndrewDesigner */
@@ -28,9 +28,9 @@
     top: 0;
     margin-left: -50%;
     margin-top: -70%;
-    /* background: linear-gradient(744deg, #af40ff, #5b42f3 60%, #00ddeb); */
     background: linear-gradient(744deg, #60A5FA, #10B981 60%, #A7F3D0);
 }
+
 
 .infotop {
     text-align: center;
@@ -82,6 +82,23 @@
     animation-duration: 45s;
 }
 
+.new_button {
+    z-index: 2;
+    position: relative;
+    width: 15%;
+    border: none;
+    background-color:#10B981;
+    border-radius: 12px;
+    height: 30px;
+    color: white;
+    font-size: .8em;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+/* manejo repositorio */
 @keyframes wave {
     0% {
         transform: rotate(0deg);

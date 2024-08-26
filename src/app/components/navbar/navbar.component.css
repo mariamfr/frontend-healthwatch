@@ -3,7 +3,8 @@ header {
     margin: 15px 8px 0px 8px;
     display: grid;
     grid-template-rows: 50%, 50%;
-    height: 100px;
+    /* height: 100px; */
+    height: 10vh;
     position: relative;
     width: 100%;
 }
