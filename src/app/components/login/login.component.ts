@@ -17,6 +17,8 @@ export class LoginComponent {
   name: string = ''
   email: string = ''
   password: string = ''
+  loginCaption: string = 'Ingresar/Registrar'
+  loginHeading: string = 'Login'
 
 constructor(private router: Router, private authService: AuthService){}
 
@@ -42,4 +44,28 @@ login() :void {
   
 }
 
+  checkIfExistsUser() :void {
+    console.log(this.email)
+    this.authService.user(this.email).subscribe(
+      //subscribe recibe dos parametros, responsive, error
+      response => {
+          console.log('entrando ok', response )
+          if(response.ok){
+              //guardar session
+              this.loginCaption = 'Ingresar'
+              this.loginHeading = 'Login'
+              // Swal.fire('User found', response.msg, 'success')
+          } else {
+            Swal.fire('Upps errores', response.response.msg, 'error')
+        
+          }
+      }, error => {
+        this.loginCaption = 'Registrarse'
+        this.loginHeading = 'Register'
+        //  Swal.fire('Upps errores', error.error.msg, 'error')
+      }
+    )
+    
+  }
+  
 }
