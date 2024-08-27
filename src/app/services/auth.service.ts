@@ -26,5 +26,14 @@ export class AuthService {
     bancoSangre(): Observable<any> {
       return this.http.get<any>(`${this.apiUrl}/bancosangre`)
     }
-  
+
+    //servicio para insertar coleccion bancosangre
+    newBancoSangre(data : any ): Observable<any> {
+      return this.http.post<any>(`${this.apiUrl}/newbancosangre`, data )
+    }
+    //servicio para insertar coleccion bancosangre
+    updateBancoSangre(data : any): Observable<any> {
+      return this.http.post<any>(`${this.apiUrl}/updatebancosangre`, data)
+    }
+    
 }

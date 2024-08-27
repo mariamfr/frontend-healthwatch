@@ -1,9 +1,12 @@
 <p>synchronize-data works!</p>
 <div>
-    <button (click)="getAllData()">Banco Sangre</button>
+    <button (click)="synchronizeBancoSangre()">Banco Sangre</button>
     <button (click)="getAllData()">Consultorio Médico</button>
     <button (click)="getAllData()">Entidad Farmacéutica</button>
   </div>
 <div>
-    {{data}}
+    {{resultSynchronizeData}}
 </div>
+
+<!-- npm install leaflet
+npm install --save-dev @types/leaflet -->
