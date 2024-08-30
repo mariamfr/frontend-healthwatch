@@ -7,6 +7,8 @@ import { IncidentComponent } from './components/incident/incident.component';
 import { AlertComponent } from './protected/alert/alert.component';
 import { AuthGuard } from './guards/auth.guard';
 import { SynchronizeDataComponent } from './components/synchronize-data/synchronize-data.component';
+import { NewAlertComponent } from './protected/new-alert/new-alert.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
 
 export const routes: Routes = [
     {path:"", title:"Home", component: HomeComponent},
@@ -15,5 +17,7 @@ export const routes: Routes = [
     {path:"incident", title:"Incidencias", component:IncidentComponent},
     {path:"alert", title:"Alertas", component:AlertComponent, canActivate:[AuthGuard]},
     {path:"geojson-list", title:"List Servicios", component:GeojsonListComponent},
-    {path:"synchronize-data", title:"Sincronizar Data", component:SynchronizeDataComponent}
+    {path:"synchronize-data", title:"Sincronizar Data", component:SynchronizeDataComponent},
+    {path:"new-alert", title:"Nueva Alerta", component:NewAlertComponent},
+    {path:"about-us", title:"A cerca de", component:AboutUsComponent}
 ];

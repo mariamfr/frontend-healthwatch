@@ -1,21 +1,24 @@
 <header>
     <div class="header__container">
         <nav class="navbar">
-            
+
             <a routerLink="">
-                <img src="img/Logo.png" alt="logo HealthWatch">                
+                <img src="img/Logo.png" alt="logo HealthWatch">
             </a>
             <ul>
-                <li><a routerLink="geojson-list" class="nav-link">Servicios</a></li>
+                <li><a routerLink="synchronize-data" class="nav-link">Servicios</a></li>
                 <li><a routerLink="incident" class="nav-link">Incidencias</a></li>
-                <li><a routerLink="alert" class="nav-link">Alertas</a></li>
+                <li><a routerLink="alert" *ngIf="isLoggedIn" class="nav-link">Alertas</a></li>
             </ul>
-            <a routerLink="">
-                <i class="fa-sharp fa-solid fa-house"></i>
-            </a>
-            <button class="navbar_button">
-                <a routerLink="login">LOGIN</a>
+            <button class="navbar_button" *ngIf="isLoggedIn" (click)="logout()">
+                <a>Logout</a>
             </button>
+            <button class="navbar_button" *ngIf="!isLoggedIn" >
+                <a routerLink="login">Login</a>
+            </button>
+            <div class=".nameuser" *ngIf="isLoggedIn">
+                <a >{{userName}}</a>
+            </div>
         </nav>
     </div>
 </header>

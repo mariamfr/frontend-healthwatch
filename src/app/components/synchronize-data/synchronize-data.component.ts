@@ -13,7 +13,7 @@ import { CommonModule } from '@angular/common';
 
 export class SynchronizeDataComponent {
   data: any = {}
-  url: string = 'https://datosabiertos.bogota.gov.co/dataset/c9cc72c9-4242-4a57-b86d-d377de88b558/resource/838967cb-47dd-4567-b41c-62d3103ecfaa/download/eps.geojson'
+  url: string = 'https://datosabiertos.bogota.gov.co/dataset/53472aaa-2b4f-4b15-8e43-3a243b518ca1/resource/b80a3352-b9b8-42e8-a007-66f665515dc0/download/bancosangre.geojson'
   constructor( private datosabiertosService: DatosabiertosService) {}
   ngOnInit(): void {
     this.getAllData()
@@ -26,6 +26,7 @@ export class SynchronizeDataComponent {
       response => {
         console.log(response)
         this.data = response
+        console.log(this.data)
       },
       error => {
         console.log(error)
