@@ -1,5 +1,5 @@
 <div class="wrapper">
-    <form (submit)="login()" class="form_main">
+    <form (submit)="login()"  class="form_main">
         <p class="heading">{{loginHeading}}</p>
         <div class="inputContainer">
             <svg class="inputIcon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#2e2e2e"
@@ -23,9 +23,12 @@
                 placeholder="Contraseña">
         </div>
 
+        <div class="inputContainer">
+            <input name="username" type="text" class="inputField" id="username"
+                placeholder="Nombre">
+        </div>
 
         <button id="button">{{loginCaption}}</button>
         <a class="forgotLink" href="#">Olvidó su contraseña?</a>
-        <!-- <a class="registerLink" href="#">Registrar</a> -->
     </form>
 </div>

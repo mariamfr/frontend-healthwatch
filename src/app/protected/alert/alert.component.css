@@ -98,6 +98,24 @@
     cursor: pointer;
 }
 
+.button_card {
+    z-index: 4;
+    padding: auto;
+    position: relative;
+    width: 15%;
+    border: none;
+    background-color:#10B981;
+    border-radius: 12px;
+    height: 30px;
+    color: #000;
+    font-size: .8em;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin: 20px;
+    cursor: pointer;
+}
+
+
 /* manejo repositorio */
 @keyframes wave {
     0% {

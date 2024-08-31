@@ -26,7 +26,6 @@ export class SynchronizeDataComponent implements OnInit {
     // this.firstTenFeatures = this.geojsonService.getFirstTenFeatures('bancoSangre'); // Pass the collection name here
   }
 
-
   // getAllData(): void {
   //   this.dataPublicAvailable = false
   //   this.resultSynchronizeData = ''
@@ -41,7 +40,6 @@ export class SynchronizeDataComponent implements OnInit {
   //   //     this.resultSynchronizeData = 'falla en https://datosabiertos.bogota.gov.co: ' + error.name
   //   //   }
   //   // )
-
   // }
 
 
