@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
+import { Router } from '@angular/router';
 import * as L from 'leaflet';
 
 @Component({
@@ -9,16 +10,17 @@ import * as L from 'leaflet';
   styleUrl: './map-test.component.css'
 })
 
-export class MapTestComponent implements OnInit {
+export class MapTestComponent implements AfterViewInit {
 
-  private map: L.Map = L.map('map', {
-    center: [0, 0],
-    zoom: 2
-  });
+  private map: L.Map  = L.map('map', {
+     center: [0, 0],
+     zoom: 2
+   })
+  ;
 
-  constructor() { }
+  constructor(private router : Router) { }
 
-  ngOnInit(): void {
+  ngAfterViewInit(): void {
     this.initMap();
   }
 
@@ -32,10 +34,10 @@ export class MapTestComponent implements OnInit {
       maxZoom: 19,
     }).addTo(this.map);
 
-    this.addMarkers();
-  }
+     this.addMarkers();
+   }
 
-  private addMarkers(): void {
+   private addMarkers(): void {
     const locations = [
       { lat: 4.6533326, lng: -74.083652 }, // Ejemplo de coordenadas para cada marca
       { lat: 4.6543326, lng: -74.084652 },
@@ -44,12 +46,12 @@ export class MapTestComponent implements OnInit {
       { lat: 4.6573326, lng: -74.087652 },
     ];
 
-    locations.forEach(location => {
-      L.marker([location.lat, location.lng]).addTo(this.map);
-    });
+  //   locations.forEach(location => {
+  //     L.marker([location.lat, location.lng]).addTo(this.map);
+  //   });
     
-    this.map.invalidateSize();
-  }
+  //   this.map.invalidateSize();
+   }
 
 }
 

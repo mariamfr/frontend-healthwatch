@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 //permite ayudar a la conexion httpclient
 import { Observable } from 'rxjs';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -25,10 +26,10 @@ export class AuthService {
     return this.http.post<any>(`${this.apiUrl}/login`, { email, password })
   }
 
-    //servicio para login
-    user(email: string): Observable<any> {
-      return this.http.get<any>(`${this.apiUrl}/user?email=${ email }`)
-    }
+  //servicio para login
+  user(email: string): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/user?email=${email}`)
+  }
 
 
   //Revisa si el usuario se encuentra logeado
@@ -67,20 +68,20 @@ export class AuthService {
     return this.http.get<any>(`${this.apiUrl}/user/${userId}`, { headers })
   }
 
-    //servicio para coleccion bancosangre
-    bancoSangre(): Observable<any> {
-      return this.http.get<any>(`${this.apiUrl}/bancosangre`)
-    }
+  //servicio para coleccion bancosangre
+  bancoSangre(): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/bancosangre`)
+  }
 
 
-        //servicio para coleccion nameService
-        dataService(nameService:string): Observable<any> {
-          return this.http.get<any>(`${this.apiUrl}/${nameService}`)
-        }
-        synchronizationData(service: string ): Observable<any> {
-          return  this.http.post<any>(`${this.apiUrl}/synchronization?service=${service}`, '' )
-        }
-    
-
-
-}
+  //servicio para coleccion nameService
+  dataService(nameService: string): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/${nameService}`)
+  }
+  synchronizationData(service: string): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/synchronization?service=${service}`, '')
+  }
+// getMarkers(geojsonData:string): Observable<any> {
+//   return this.http.get<any>(`${geojsonData}`)
+//   }
+  }

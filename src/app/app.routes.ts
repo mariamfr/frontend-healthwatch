@@ -9,6 +9,8 @@ import { AuthGuard } from './guards/auth.guard';
 import { SynchronizeDataComponent } from './components/synchronize-data/synchronize-data.component';
 import { NewAlertComponent } from './protected/new-alert/new-alert.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
+import { MapTestComponent } from './components/map-test/map-test.component';
+
 
 export const routes: Routes = [
     {path:"", title:"Home", component: HomeComponent},
@@ -19,5 +21,6 @@ export const routes: Routes = [
     {path:"geojson-list", title:"List Servicios", component:GeojsonListComponent},
     {path:"synchronize-data", title:"Sincronizar Data", component:SynchronizeDataComponent},
     {path:"new-alert", title:"Nueva Alerta", component:NewAlertComponent},
-    {path:"about-us", title:"A cerca de", component:AboutUsComponent}
+    {path:"about-us", title:"A cerca de", component:AboutUsComponent},
+    {path:"maptest", title:"Test de Mapa", component:MapTestComponent}
 ];

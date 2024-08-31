@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import * as L from 'leaflet';
 
 // Opcional: Solucionar problemas con los íconos de Leaflet en Angular
