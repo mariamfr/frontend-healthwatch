@@ -27,13 +27,13 @@ export class AuthService {
       return this.http.get<any>(`${this.apiUrl}/bancosangre`)
     }
 
-    //servicio para insertar coleccion bancosangre
-    newBancoSangre(data : any ): Observable<any> {
-      return this.http.post<any>(`${this.apiUrl}/newbancosangre`, data )
-    }
-    //servicio para insertar coleccion bancosangre
-    updateBancoSangre(data : any): Observable<any> {
-      return this.http.post<any>(`${this.apiUrl}/updatebancosangre`, data)
-    }
+
+        //servicio para coleccion nameService
+        dataService(nameService:string): Observable<any> {
+          return this.http.get<any>(`${this.apiUrl}/${nameService}`)
+        }
+        synchronizationData(service: string ): Observable<any> {
+          return  this.http.post<any>(`${this.apiUrl}/synchronization?service=${service}`, '' )
+        }
     
 }

@@ -13,11 +13,20 @@ export class DatosabiertosService {
 
   constructor(private http: HttpClient) { }
   //servicio para data
-  getData(url: string): Observable<any> {
-    return this.http.get<any>(url)
-  }
+   getData(url: string):  void  {
+  let response  
+    const makeRequest :any = async () => {
+try{
+    await this.http.get<any>(url)
 }
-
+catch(error){ 
+  error     
+        }
+          }
+          return makeRequest()
+        }
+  }
+ 
 
 
 
