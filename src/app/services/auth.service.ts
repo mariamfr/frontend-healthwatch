@@ -68,11 +68,10 @@ export class AuthService {
     return this.http.get<any>(`${this.apiUrl}/user/${userId}`, { headers })
   }
 
-  //servicio para coleccion bancosangre
+  // //servicio para coleccion bancosangre
   bancoSangre(): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/bancosangre`)
+     return this.http.get<any>(`${this.apiUrl}/bancosangre`)
   }
-
 
   //servicio para coleccion nameService
   dataService(nameService: string): Observable<any> {
