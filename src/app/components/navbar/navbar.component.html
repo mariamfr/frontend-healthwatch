@@ -9,16 +9,18 @@
                 <li><a routerLink="service" class="nav-link">Servicios</a></li>
                 <li><a routerLink="incident" class="nav-link">Incidencias</a></li>
                 <li><a routerLink="alert" *ngIf="isLoggedIn" class="nav-link">Alertas</a></li>
+
             </ul>
+            <div id="navbar_user" *ngIf="isLoggedIn">
+                {{userName}}
+            </div>
             <button class="navbar_button" *ngIf="isLoggedIn" (click)="logout()">
                 <a>Logout</a>
             </button>
-            <button class="navbar_button" *ngIf="!isLoggedIn" >
+            <button class="navbar_button" *ngIf="!isLoggedIn">
                 <a routerLink="login">Login</a>
             </button>
-            <div class=".nameuser" *ngIf="isLoggedIn">
-                <a >{{userName}}</a>
-            </div>
+
         </nav>
     </div>
 </header>
