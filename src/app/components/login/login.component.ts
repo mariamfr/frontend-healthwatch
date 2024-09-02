@@ -17,7 +17,8 @@ export class LoginComponent {
   name: string = ''
   email: string = ''
   password: string = ''
-  username: string = ''
+  userName: string = ''
+  userRole: boolean = false
   loginCaption: string = 'Ingresar/Registrar'
   loginHeading: string = 'Login'
   existsEmail: boolean = false
@@ -40,7 +41,9 @@ export class LoginComponent {
             sessionStorage.setItem('userEmail', this.email)
 
             sessionStorage.setItem('userName', response.userName)
+            sessionStorage.setItem('userRole', response.userRole)
             console.log(response.userName)
+            console.log(response.userRole)
             Swal.fire('Bienvenido Usuario logeado', response.msg, 'success')
 
             this.router.navigate(['/'])
@@ -52,25 +55,25 @@ export class LoginComponent {
         }
       )
     } else {
-    //activar el servicio register
-    this.authService.register(this.email, this.password, this.username).subscribe(
-      response => {
-        console.log('ejecutado desde respuesta')
-        console.log(response)
-        if (response.ok) {
-          Swal.fire('Usuario registrado!..', response.msg, 'success')
-          //redirecciona al login
-          this.router.navigate(['/login'])
-        } else {
-          Swal.fire('Errores de registro de usuario', response.error.msg, 'error')
+      //activar el servicio register
+      this.authService.register(this.email, this.password, this.userName, this.userRole).subscribe(
+        response => {
+          console.log('ejecutado desde respuesta')
+          console.log(response)
+          if (response.ok) {
+            Swal.fire('Usuario registrado!..', response.msg, 'success')
+            //redirecciona al login
+            this.router.navigate(['/login'])
+          } else {
+            Swal.fire('Errores de registro de usuario', response.error.msg, 'error')
+          }
+        },
+        error => {
+          console.log('Ejecutado desde el error')
+          console.log(error)
+          Swal.fire('!!upss error', error.error.msg, 'error')
         }
-      },
-      error => {
-        console.log('Ejecutado desde el error')
-        console.log(error)
-        Swal.fire('!!upss error', error.error.msg, 'error')
-      }
-    )
+      )
 
     }
   }

@@ -13,6 +13,7 @@ import { AuthService } from '../../services/auth.service';
 export class NavbarComponent {
   isMenuOpen: boolean = false;
   userName : any = ''
+  userRole : any = ''
   constructor(private router: Router, private authService: AuthService){}
 
   ngOnInit(): void {
@@ -34,9 +35,18 @@ logout() {
 }
 
 getUserName() {
-  this.userName =  this.authService.getUserName()
-  console.log('buscando username')
+  if (this.authService.isUserAdministrator()) {
+    this.userName =  `${this.authService.getUserName()}(admin)`     
+  } else {
+    this.userName =  `${this.authService.getUserName()}`    
+  }
+  console.log('buscando userName')
   console.log(this.userName)
 }
+
+get isUserAdministrator(): boolean {
+  return this.authService.isUserAdministrator()
+}
+
 
 }

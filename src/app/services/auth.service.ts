@@ -11,6 +11,7 @@ import { Observable } from 'rxjs';
 export class AuthService {
   //ruta del backend para ejecutar los api rest
   private apiUrl = "http://localhost:3001/api"
+  private roleAdministration: boolean = false
 
   constructor(private http: HttpClient) { }
 
@@ -26,7 +27,7 @@ export class AuthService {
     return this.http.post<any>(`${this.apiUrl}/login`, { email, password })
   }
 
-  //servicio para login
+  //servicio para login, pregunta si existe el email
   user(email: string): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/user?email=${email}`)
   }
@@ -40,11 +41,14 @@ export class AuthService {
   //Realizar logout
   logout() {
     sessionStorage.removeItem('token')
+    sessionStorage.removeItem('email')
+    sessionStorage.removeItem('userName')
+    sessionStorage.removeItem('userRole')
   }
 
-  //organizando servicio para el api registro usuario que tieen un post y un json
-  register(email: string, password: string, username: string): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/register`, { email, password, username })
+  //organizando servicio para el api registro usuario que tienen un post y un json
+  register(email: string, password: string, userName: string, userRole: boolean): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/register`, { email, password, userName, userRole })
   }
 
   //Trae el token
@@ -62,16 +66,28 @@ export class AuthService {
     return sessionStorage.getItem('userName')
   }
 
+  //Revisa si el usuario es administrador
+  isUserAdministrator(): boolean {
+    this.roleAdministration = false
+    console.log(sessionStorage.getItem('userRole'))
+    if (sessionStorage.getItem('userRole') == 'true') {
+      this.roleAdministration = true
+    }
+    return this.roleAdministration
+
+  }
+
   //traer los datos para un usuario
   getUser(userId: any): Observable<any> {
     const headers = this.getHeaders()
     return this.http.get<any>(`${this.apiUrl}/user/${userId}`, { headers })
   }
 
-  // //servicio para coleccion bancosangre
+  //servicio para coleccion bancosangre
   bancoSangre(): Observable<any> {
-     return this.http.get<any>(`${this.apiUrl}/bancosangre`)
+    return this.http.get<any>(`${this.apiUrl}/bancosangre`)
   }
+
 
   //servicio para coleccion nameService
   dataService(nameService: string): Observable<any> {
@@ -80,7 +96,9 @@ export class AuthService {
   synchronizationData(service: string): Observable<any> {
     return this.http.post<any>(`${this.apiUrl}/synchronization?service=${service}`, '')
   }
-// getMarkers(geojsonData:string): Observable<any> {
-//   return this.http.get<any>(`${geojsonData}`)
-//   }
-  }
+
+
+
+
+}
+

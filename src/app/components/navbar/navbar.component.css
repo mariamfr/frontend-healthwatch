@@ -1,6 +1,6 @@
 header {
     width: 100%;
-    height: 10vh;
+    height: 9vh;
     position: relative;
     background-color: #B1C6EA;
     margin: 15px 8px 0px 8px;
@@ -95,11 +95,7 @@ header {
     cursor: pointer;
 }
 
-.nameuser {
-    color: #10B981;
-    font-size: 30px;
-    padding: 4px;
-}
+
 
 /* Organizando el boton de busqueda */
 .headerSearch__container {
@@ -119,6 +115,13 @@ header {
     border-radius: 12px;
     border: none;
     font-size: 35px;
+}
+
+#navbar_user {
+    color: #10B981;
+    font-size: 19px;
+    font-style: bold;
+    padding: 4px;
 }
 
 /* manejo de los queries */

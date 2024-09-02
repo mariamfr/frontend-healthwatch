@@ -23,7 +23,7 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "node_modules/leaflet/dist/images/",
+                "input": "public",
                 "output": "./assets"
               }
             ],
