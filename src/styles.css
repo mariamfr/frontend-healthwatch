@@ -9,19 +9,18 @@
 body {
     background-color: #A1BEE3;
     font-family: 'Averia Sans Libre', sans-serif;
-    /* margin: 8px 12px 3px 12px; */
 
-    min-height: 100vh;
+    /* min-height: 30vh; */
     margin: 0;
     display: flex;
-    flex-direction: column;    
+    flex-direction: column;   
     position: relative;    
 }
 
 /* altura de la pantalla */
 main {
-    /* height: 74vh; */
-    min-height: 100vh;
+    height: 80vh;
+    min-height: 74vh;
 }
 
 /* generales */

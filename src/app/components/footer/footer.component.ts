@@ -10,5 +10,19 @@ import { CommonModule } from '@angular/common';
   styleUrl: './footer.component.css'
 })
 export class FooterComponent {
+  
+  constructor(private router: Router){}
+
+  openInstagramlUrl(): void {
+    window.open('https://www.instagram.com/mariamflorez/', '_blank', 'noopener,noreferrer');
+  }
+
+  openLinkedinUrl(): void {
+    window.open('https://www.linkedin.com/in/mariamflorez/', '_blank', 'noopener,noreferrer');
+  }
+
+  openGithubUrl(): void {
+    window.open('https://github.com/mariamfr', '_blank', 'noopener,noreferrer');
+  }
 
 }

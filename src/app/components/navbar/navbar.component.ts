@@ -45,7 +45,7 @@ getUserName() {
 }
 
 get isUserAdministrator(): boolean {
-  return this.authService.isUserAdministrator()
+  return !this.authService.isUserAdministrator()
 }
 
 

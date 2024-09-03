@@ -27,9 +27,11 @@ export class NewAlertComponent {
   userAlert: string = ''
   typeAlert: string = ''
 
+
   constructor(private router: Router,
     private alertService: AlertService,
-    private typeAlertService: TypeAlertService) { }
+    private typeAlertService: TypeAlertService
+) { }
 
   ngOnInit(): void {
     //this.typeAlerts
@@ -50,10 +52,10 @@ export class NewAlertComponent {
       error => {
         console.log(error)
       }
-    ) 
+    )
 
-    }
-  
+  }
+
 
 
   newAlert(): void {
@@ -91,5 +93,9 @@ export class NewAlertComponent {
     }
   }
 
-  
+  cancelar(): void {
+    //redirecciona a las incidencias
+    this.router.navigate(['/alert'])
+  }
+
 }

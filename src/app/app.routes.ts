@@ -24,7 +24,8 @@ export const routes: Routes = [
     {path:"new-alert", title:"Nueva Alerta", component:NewAlertComponent},
     {path:"about-us", title:"A cerca de", component:AboutUsComponent},
     // {path:"maptest", title:"Test de Mapa", component:MapTestComponent},
-    {path:"new-incident", title:"Nueva Incidencia", component:NewIncidentComponent}
+    {path:"new-incident", title:"Nueva Incidencia", component:NewIncidentComponent},
+    {path:"edit-incident/:id", title:"Editar Incidencia", component:NewIncidentComponent}
     
 
 ];

@@ -36,15 +36,15 @@ export class IncidentService {
   }
 
   //actualiza una incidencia
-  updateIncidentById(Id: string): Observable<any> {
+  updateIncidentById(Id: string | null, data: any): Observable<any> {
     const headers = this.getHeaders()
-    return this.http.put(`${this.apiUrl}/updateincident/${Id}`, { headers })
+    return this.http.put(`${this.apiUrl}/updateincident/${Id}`, data, { headers })
   }
 
   //nueva incidencia
-  register(nameIncident: string, description: string, incubationIncident: string, recoveryIncident: string, sourceIncident: string, imageIncident: string, casesIncident: number, urlSourceIncident: string ): Observable<any> {
+  register(data: any ): Observable<any> {
     const headers = this.getHeaders()
-    return this.http.post<any>(`${this.apiUrl}/newincident`, {nameIncident, description, incubationIncident, recoveryIncident, sourceIncident, imageIncident, casesIncident, urlSourceIncident }, { headers })
+    return this.http.post<any>(`${this.apiUrl}/newincident`, data, { headers })
   }
 
 }

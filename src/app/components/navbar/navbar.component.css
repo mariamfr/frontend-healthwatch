@@ -1,11 +1,12 @@
 header {
+    z-index: 800;
     width: 100%;
     height: 9vh;
     position: relative;
     background-color: #B1C6EA;
-    margin: 15px 8px 0px 8px;
+    margin: 1px 0px 0px 0px;
     display: grid;
-    grid-template-rows: 50%, 50%;
+    grid-template-rows: 70%, 30%;
 }
 
 .header__container a {
@@ -47,6 +48,11 @@ header {
     height: 40px;
 }
 
+.navbar img:hover {
+    transition: transform 0.2s ease, color 0.2s ease;
+    transform: scale(1.2); 
+}
+
 .navbar ul {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -71,19 +77,29 @@ header {
 }
 
 .navbar button {
-    background-color: #10B981;
-    color: #F3F4F6;
+    background-color: #9ACD32;
+    color: #FFF;
+    border: 1px solid #6B8E23;
     border-radius: 12px;
-    border: none;
-
-    z-index: 2;
-    width: 100%;
+    z-index: 50;
+    width: 200px;
     height: 30px;
     font-size: .8em;
     font-weight: 500;
     letter-spacing: 1px;
     margin: 10px;
+    padding: 10px 20px;
     cursor: pointer;
+
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    align-self: center;  
+    transition: background-color 0.3s ease;
+    background-color: linear-gradient(744deg, #6B8E23  #A7F3D0 50%, #9ACD32);
+    animation: gradient_301 60s ease infinite;
 }
 
 .navbar button a {
@@ -91,8 +107,11 @@ header {
 }
 
 .navbar button:hover {
-    border: 2px solid #A7F3D0;
-    cursor: pointer;
+    background-color: #A2D56B;
+    color: #1F2937;
+    border-color: #9ACD32;
+    transition: transform 0.2s ease, color 0.2s ease;
+    transform: scale(1.1);     
 }
 
 
@@ -118,10 +137,10 @@ header {
 }
 
 #navbar_user {
-    color: #10B981;
+    color: #1E3A8A;
     font-size: 19px;
     font-style: bold;
-    padding: 4px;
+    padding: 3px;
 }
 
 /* manejo de los queries */

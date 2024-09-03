@@ -333,7 +333,7 @@ export class ServiceComponent implements AfterViewInit {
     // this.map.flyTo(midPoint, this.map.getZoom());
     let zoom = 18 - 2 * Math.floor(distance / 300 ) 
     console.info( 'zoom', zoom, distance )
-    if(zoom<13){zoom=13}
+    if(zoom<13){zoom=14}
     this.map.flyToBounds(coodinatesbounds, { padding: [5, 5], maxZoom: zoom });
   }
 

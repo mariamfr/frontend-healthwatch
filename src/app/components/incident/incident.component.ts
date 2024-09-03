@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
 import { IncidentService } from '../../services/incident.service';
 
 import { CommonModule } from '@angular/common';
@@ -11,11 +11,11 @@ import { AuthService } from '../../services/auth.service';
 @Component({
   selector: 'app-incident',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './incident.component.html',
   styleUrl: './incident.component.css'
 })
-export class IncidentComponent {
+export class IncidentComponent implements OnInit {
 
   incidents: any[] = []
   currentIndex = 0;
@@ -98,30 +98,6 @@ export class IncidentComponent {
       }
     });
   }
-
-
-  updateIncidentById(incidentId: string): void {
-    Swal.fire({
-      title: 'Desea modificar esta incidencia?',
-      showCancelButton: true,
-      confirmButtonText: 'Yes'
-    }).then((result) => {
-      if (result.isConfirmed) {
-        this.incidentService.updateIncidentById(incidentId).subscribe(
-          response => {
-            console.log(response)
-            Swal.fire('update', response.msg, 'success')
-            this.incidents = this.incidents.filter(x => x._id !== incidentId)
-            this.loadIncidents()
-          },
-          error => {
-            console.log(error)
-          }
-        )
-      }
-    });
-  }
-
 
   get isUserAdministrator(): boolean {
     return this.authService.isUserAdministrator()

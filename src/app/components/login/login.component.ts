@@ -4,12 +4,14 @@ import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { FormsModule } from '@angular/forms';
 
+
 import Swal from 'sweetalert2';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
@@ -45,6 +47,7 @@ export class LoginComponent {
             console.log(response.userName)
             console.log(response.userRole)
             Swal.fire('Bienvenido Usuario logeado', response.msg, 'success')
+
 
             this.router.navigate(['/'])
           } else {
@@ -102,9 +105,12 @@ export class LoginComponent {
         //  Swal.fire('Upps errores', error.error.msg, 'error')
       }
     )
-
   }
 
+
+  IsExistEmail(): boolean {
+    return this.existsEmail
+  }
 }
 
 
