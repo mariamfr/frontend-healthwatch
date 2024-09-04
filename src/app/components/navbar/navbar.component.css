@@ -6,7 +6,7 @@ header {
     background-color: #B1C6EA;
     margin: 1px 0px 0px 0px;
     display: grid;
-    grid-template-rows: 70%, 30%;
+    grid-template-rows: 70% 30%;
 }
 
 .header__container a {
@@ -144,7 +144,7 @@ header {
 }
 
 /* manejo de los queries */
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1030px) {
     header {
         grid-template-rows: 50%, 50%;
         /* border: 5px double black; */
