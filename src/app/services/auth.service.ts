@@ -1,8 +1,9 @@
+// autorizacion del servicio
 import { Injectable } from '@angular/core';
 // conectar back con el front
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 //permite ayudar a la conexion httpclient
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 
 
 @Injectable({
@@ -12,6 +13,9 @@ export class AuthService {
   //ruta del backend para ejecutar los api rest
   private apiUrl = "http://localhost:3001/api"
   private roleAdministration: boolean = false
+  private userNameSubject = new BehaviorSubject<string | null>(null)
+
+  userName$ = this.userNameSubject.asObservable() 
 
   constructor(private http: HttpClient) { }
 
@@ -48,6 +52,8 @@ export class AuthService {
 
   //organizando servicio para el api registro usuario que tienen un post y un json
   register(email: string, password: string, userName: string, userRole: boolean): Observable<any> {
+    console.log('enviando el nombre')
+    console.log(userName)
     return this.http.post<any>(`${this.apiUrl}/register`, { email, password, userName, userRole })
   }
 
@@ -97,7 +103,9 @@ export class AuthService {
     return this.http.post<any>(`${this.apiUrl}/synchronization?service=${service}`, '')
   }
 
-
+setUserName(userName: string){
+  this.userNameSubject.next(userName)
+}
 
 
 }

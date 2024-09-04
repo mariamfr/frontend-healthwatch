@@ -12,7 +12,7 @@
                         </path>
                     </svg>
                     <input [(ngModel)]="email" name="email" type="text" (blur)="checkIfExistsUser()" class="inputField"
-                        id="username" placeholder="Correo">
+                        id="email" placeholder="Correo">
                 </div>
                 <div class="inputContainer">
                     <svg class="inputIcon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#2e2e2e"
@@ -26,7 +26,7 @@
                 </div>
 
                 <div class="inputContainer">
-                    <input name="username" *ngIf="!IsExistEmail()" type="text" class="inputField" id="username" placeholder="Nombre">
+                    <input [(ngModel)]="userName" name="userName" *ngIf="!IsExistEmail()" type="text" class="inputField" id="userName" placeholder="Nombre">
                 </div>
 
                 <button id="button">{{loginCaption}}</button>

@@ -12,12 +12,16 @@ import { AuthService } from '../../services/auth.service';
 })
 export class NavbarComponent {
   isMenuOpen: boolean = false;
-  userName : any = ''
+  userName : string | null = null
   userRole : any = ''
+
   constructor(private router: Router, private authService: AuthService){}
 
-  ngOnInit(): void {
-    this.getUserName()
+  ngOnInit(): void  {
+    // this.getUserName()
+    this.authService.userName$.subscribe(username => {
+      this.userName = username
+    })
   }
 
 toogleMenu() {

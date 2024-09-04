@@ -56,13 +56,13 @@ section {
 .card_title {
     padding-top: 10%;
     font-size: 28px;
-    color: #1F2937;
+    color: #fff;
 }
 
 .card_info {
     padding-top: 5%;
     padding-bottom: 2%;
-    color: #828282;
+    color: #a09d9d;
     font-size: 17px;
 }
 

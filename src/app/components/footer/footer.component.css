@@ -80,6 +80,7 @@
     @media screen and (max-width: 350px) {
         .footer_container {
             grid-template-columns: 1fr;
+            font-size: 8px;
         }
     }
 }

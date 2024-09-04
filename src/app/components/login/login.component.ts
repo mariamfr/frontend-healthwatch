@@ -38,14 +38,15 @@ export class LoginComponent {
           if (response.ok) {
             //guardar session
             sessionStorage.setItem('token', response.token)
-            //guarda el usuario de la sesion
+            //guarda datos del usuario de la sesion
             sessionStorage.setItem('userId', response.userId)
             sessionStorage.setItem('userEmail', this.email)
-
             sessionStorage.setItem('userName', response.userName)
             sessionStorage.setItem('userRole', response.userRole)
             console.log(response.userName)
             console.log(response.userRole)
+
+            this.authService.setUserName(response.userName)
             Swal.fire('Bienvenido Usuario logeado', response.msg, 'success')
 
 
@@ -58,6 +59,12 @@ export class LoginComponent {
         }
       )
     } else {
+      console.log('ingreso data del formulario');
+      console.log(this.email)
+      console.log(`email ${this.userName}`);
+      if (this.userName == ''|| this.email == '' || this.password == '') {
+        Swal.fire('recordar el nombre', 'requiere colocar el correo,la clave y el nombre para registrarse', 'error')
+      } else {      
       //activar el servicio register
       this.authService.register(this.email, this.password, this.userName, this.userRole).subscribe(
         response => {
@@ -66,6 +73,10 @@ export class LoginComponent {
           if (response.ok) {
             Swal.fire('Usuario registrado!..', response.msg, 'success')
             //redirecciona al login
+            this.email = ''
+            this.password = ''
+            this.userName = ''
+            this.userRole = false
             this.router.navigate(['/login'])
           } else {
             Swal.fire('Errores de registro de usuario', response.error.msg, 'error')
@@ -77,9 +88,10 @@ export class LoginComponent {
           Swal.fire('!!upss error', error.error.msg, 'error')
         }
       )
-
+    }
     }
   }
+
 
   checkIfExistsUser(): void {
     console.log(this.email)
