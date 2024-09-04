@@ -64,3 +64,22 @@
     }
 }
 }
+
+.map-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 10;
+    margin: 5px;
+  }
+  
+  .map-frame {
+    border: 2px solid black;
+    height: 100%;
+  }
+  
+  #mapHome {
+    width: 400px;
+    height: 200px;
+  }

@@ -10,7 +10,7 @@ import { AuthService } from '../../services/auth.service';
   templateUrl: './service.component.html',
   styleUrl: './service.component.css'
 })
-export class ServiceComponent implements AfterViewInit {
+export class ServiceComponent  {
   private map!: L.Map;
   private marker!: L.Marker;
   private circle!: L.CircleMarker;
@@ -25,7 +25,6 @@ export class ServiceComponent implements AfterViewInit {
     html: this.personIconHtml,
     className: '' // Importante: eliminar las clases predeterminadas para un diseño limpio
   });
-  bancosSangreData: any;
   private initMap(): void {
 
     // , "RSOCIAL": "NATURAL + PLUS SA  TUNAL"
