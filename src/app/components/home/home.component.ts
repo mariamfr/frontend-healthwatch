@@ -47,39 +47,40 @@ export class HomeComponent {
         className: '' // Importante: eliminar las clases predeterminadas para un diseño limpio
       }),
       L.divIcon({
-        html: '<i class="fa-solid fa-user-doctor style="font-size:32px;color:green;"></i>',
+        // html: '<i class="fa-solid fa-user-doctor style="font-size:16px;color:green;"></i>',
+        html: '<i class="fa-solid fa-user-doctor" style="font-size:16px;color:green;"></i>',
         className: '' // Importante: eliminar las clases predeterminadas para un diseño limpio
       }),
       L.divIcon({
-        html: '<i class="fa-solid fa-prescription-bottle-medical style="font-size:32px;color:blue;"></i>',
+        html: '<i class="fa-solid fa-prescription-bottle-medical" style="font-size:16px;color:blue;"></i>',
         className: '' // Importante: eliminar las clases predeterminadas para un diseño limpio
       }),
       L.divIcon({
-        html: '<i class="fa-solid fa-file-waveform style="font-size:32px;color:brown;"></i>',
+        html: '<i class="fa-solid fa-file-waveform" style="font-size:16px;color:brown;"></i>',
         className: '' // Importante: eliminar las clases predeterminadas para un diseño limpio
       }),
       L.divIcon({
-        html: '<i class="fa-solid fa-file-medical style="font-size:32px;color:lightblue;"></i>',
+        html: '<i class="fa-solid fa-file-medical" style="font-size:16px;color:blue;"></i>',
         className: '' // Importante: eliminar las clases predeterminadas para un diseño limpio
       }),
       L.divIcon({
-        html: '<i class="fa-solid fa-house-medical style="font-size:32px;color:lightgreen;"></i>',
+        html: '<i class="fa-solid fa-house-medical" style="font-size:16px;color:lightgreen;"></i>',
         className: '' // Importante: eliminar las clases predeterminadas para un diseño limpio
       }),
       L.divIcon({
-        html: '<i class="fa-solid fa-notes-medical style="font-size:32px;color:lightred;"></i>',
+        html: '<i class="fa-solid fa-notes-medical" style="font-size:16px;color:lightred;"></i>',
         className: '' // Importante: eliminar las clases predeterminadas para un diseño limpio
       }),
       L.divIcon({
-        html: '<i class="fa-solid fa-hand-holding-medical style="font-size:32px;color:lightbrown;"></i>',
+        html: '<i class="fa-solid fa-hand-holding-medical" style="font-size:16px;color:lightbrown;"></i>',
         className: '' // Importante: eliminar las clases predeterminadas para un diseño limpio
       }),
       L.divIcon({
-        html: '<i class="fa-solid fa-syringe style="font-size:32px;color:blue;"></i>',
+        html: '<i class="fa-solid fa-syringe" style="font-size:16px;color:blue;"></i>',
         className: '' // Importante: eliminar las clases predeterminadas para un diseño limpio
       }),
       L.divIcon({
-        html: '<i class="fa-solid fa-suitcase-medical style="font-size:32px;color:blue;"></i>',
+        html: '<i class="fa-solid fa-suitcase-medical" style="font-size:16px;color:blue;"></i>',
         className: '' // Importante: eliminar las clases predeterminadas para un diseño limpio
       })]
     let serviceIconHtml = '<i class="fa-solid fa-laptop-medical" style="font-size:24px;color:blue;">';
@@ -207,7 +208,7 @@ export class HomeComponent {
     marker.addTo(this.mapHome);
     // this.marker.bindPopup('<b>Entidades</b>').openPopup()
 
-    let zoom = 14
+    let zoom = 13
     this.mapHome.flyToBounds(bounds, { padding: [5, 5], maxZoom: zoom });
 
   }
